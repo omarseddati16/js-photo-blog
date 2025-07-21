@@ -12,6 +12,7 @@ main {
   background-image: url(../js/img/cork.png);
 }
 
-h1 {
+h1,
+p {
   font-family: 'Edu TAS Beginner', sans-serif;
 }
