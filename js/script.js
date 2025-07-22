@@ -1,7 +1,8 @@
-//giorno 1 
 // recupero gli elementi del dom
 const galleryPhoto = document.getElementById('gallery');
-
+const pageOverlay = document.getElementById('overlay');
+const buttonOverlay = document.getElementById('button');
+const overlayImage = document.getElementById('overlayImage');
 // creo una costante per l'api
 
 const apiUrl = 'https://lanciweb.github.io/demo/api/pictures/'
@@ -13,7 +14,7 @@ const generatePhoto = function (photo) {
             <div>
               <img src="js/img/pin.svg" alt="" class="">
             </div>
-            <img src="${photo.url}" class="img-fluid mb-2" alt="...">
+            <img src="${photo.url}" class="img-fluid mb-2 clickableImage" alt="...">
                <data>${photo.date}</data>
             <p>${photo.title}</p>
           </div>
@@ -21,16 +22,24 @@ const generatePhoto = function (photo) {
   `;
 };
 
-// prendo l'api con axios
 const loadPhoto = function () {
-  //svuoto il contenitore per mettere le url
   galleryPhoto.innerHTML = '';
   axios.get(apiUrl).then(function (response) {
     response.data.forEach(function (photo) {
       galleryPhoto.innerHTML += generatePhoto(photo);
     });
-  })
+    const clickableImages = document.querySelectorAll('.clickableImage');
+    clickableImages.forEach(function (image) {
+      image.addEventListener('click', function () {
+        pageOverlay.classList.remove('d-none');
+      });
+    });
+  });
 };
+
+buttonOverlay.addEventListener('click', function () {
+  pageOverlay.classList.add('d-none');
+});
+
 // richiamo la funzione per mostrare i dati
 loadPhoto();
-//giorno 2
