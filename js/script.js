@@ -9,7 +9,7 @@ const apiUrl = 'https://lanciweb.github.io/demo/api/pictures/'
 
 // html per aggiungere i dati dell'api
 const generatePhoto = function (photo) {
-  return `<div class="col-12 col-md-6 col-lg-4 mb-3 my-5 ">
+  return `<div class="col-12 col-md-6 col-lg-4 mb-3 my-5">
           <div class="bg-white p-2 text-center">
             <div>
               <img src="js/img/pin.svg" alt="" class="">
