@@ -29,3 +29,29 @@ p {
   align-items: center;
   z-index: 1000;
 }
+
+#overlayImage {
+  max-width: 60vw;
+  max-height: 60vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.col-12 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.col-12:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+#button {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}

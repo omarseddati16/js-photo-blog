@@ -23,13 +23,16 @@ const generatePhoto = function (photo) {
 };
 
 const loadPhoto = function () {
+  // svuota il contenitore
   galleryPhoto.innerHTML = '';
   axios.get(apiUrl).then(function (response) {
     response.data.forEach(function (photo) {
       galleryPhoto.innerHTML += generatePhoto(photo);
     });
+    // seleziono tutte le foto 
     const clickableImages = document.querySelectorAll('.clickableImage');
     clickableImages.forEach(function (image) {
+      //cliccando mi mostra l'immagine nell'over
       image.addEventListener('click', function () {
         overlayImage.src = image.src;
         pageOverlay.classList.remove('d-none');
@@ -37,7 +40,7 @@ const loadPhoto = function () {
     });
   });
 };
-
+// bottono per uscire dall'immagine 
 buttonOverlay.addEventListener('click', function () {
   pageOverlay.classList.add('d-none');
 });
