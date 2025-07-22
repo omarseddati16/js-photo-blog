@@ -1,3 +1,4 @@
+//giorno 1 
 // recupero gli elementi del dom
 const galleryPhoto = document.getElementById('gallery');
 
@@ -13,7 +14,8 @@ const generatePhoto = function (photo) {
               <img src="js/img/pin.svg" alt="" class="">
             </div>
             <img src="${photo.url}" class="img-fluid mb-2" alt="...">
-            <p>Lorem ipsum dolor sit amet.</p>
+               <data>${photo.date}</data>
+            <p>${photo.title}</p>
           </div>
         </div>
   `;
@@ -31,3 +33,4 @@ const loadPhoto = function () {
 };
 // richiamo la funzione per mostrare i dati
 loadPhoto();
+//giorno 2
