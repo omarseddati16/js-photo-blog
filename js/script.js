@@ -31,6 +31,7 @@ const loadPhoto = function () {
     const clickableImages = document.querySelectorAll('.clickableImage');
     clickableImages.forEach(function (image) {
       image.addEventListener('click', function () {
+        overlayImage.src = image.src;
         pageOverlay.classList.remove('d-none');
       });
     });
